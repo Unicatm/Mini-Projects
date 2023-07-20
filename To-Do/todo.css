@@ -86,6 +86,7 @@ body {
 }
 
 .container2 {
+  position: relative;
   height: 40rem;
   width: 37rem;
   padding: 3rem;
@@ -94,6 +95,8 @@ body {
   backdrop-filter: blur(9.5px);
   -webkit-backdrop-filter: blur(9.5px);
   border: 1px solid #454545;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .item {
@@ -126,6 +129,8 @@ ul {
 }
 
 .action-bar {
+  position: sticky;
+  bottom: 0;
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
