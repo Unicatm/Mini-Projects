@@ -4,15 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course</title>
+    <link rel="stylesheet" type="text/css" href="todo.css" />
   </head>
   <body>
-    <h1>This is a list where you can add items, remove and undo!</h1>
-
-    <ul id="list"></ul>
-
-    <button id="addItem">Add</button>
-    <button id="removeItem">Remove</button>
-    <button id="undo">Undo</button>
+    <div class="container">
+      <h1 id="header">To-Do</h1>
+      <div class="container2">
+        <div class="action-bar">
+          <form>
+            <input id="input-bar" type="text" />
+            <button id="addItem">Add</button>
+          </form>
+          <div>
+            <button id="removeItem">Remove</button>
+            <button id="undo">Undo</button>
+          </div>
+        </div>
+        <ul id="list">
+          <li id="item">Item 1</li>
+        </ul>
+      </div>
+    </div>
 
     <script src="list.js"></script>
   </body>
