@@ -5,23 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course</title>
     <link rel="stylesheet" type="text/css" href="todo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
-      <h1 id="header">To-Do</h1>
+      <div class="front-blobs">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+      </div>
+      <div class="back-blobs">
+        <div class="blob3"></div>
+        <div class="blob4"></div>
+        <div class="blob5"></div>
+      </div>
+
+      <h1 id="header">To Do</h1>
       <div class="container2">
         <div class="action-bar">
           <form>
             <input id="input-bar" type="text" />
-            <button id="addItem">Add</button>
+            <button id="addItem" class="fa-regular fa-plus fa-xl"></button>
           </form>
           <div>
-            <button id="removeItem">Remove</button>
-            <button id="undo">Undo</button>
+            <button class="fa-regular fa-trash-can fa-lg"></button>
+            <button id="undo" class="fa-solid fa-rotate-left fa-lg"></button>
           </div>
         </div>
         <ul id="list">
-          <li id="item">Item 1</li>
+          <div id="todo-item">
+            <button class="fa-solid fa-check fa-lg"></button>
+            <li id="item">Item 1</li>
+            <button
+              id="removeItem"
+              class="fa-regular fa-trash-can fa-lg"
+            ></button>
+          </div>
         </ul>
       </div>
     </div>

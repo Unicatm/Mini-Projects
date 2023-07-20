@@ -6,19 +6,12 @@
 
 body {
   overflow: hidden;
-  margin: auto;
-  background: linear-gradient(230deg, #ffad5c, #ffea85);
+  background: #17161a;
   font-family: Poppins;
 }
 
-#header {
-  color: #ff8a00;
-  padding-bottom: 0.75rem;
-  font-size: 5rem;
-  font-weight: 900;
-}
-
 .container {
+  position: relative;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -27,25 +20,102 @@ body {
   justify-content: center;
 }
 
+.front-blobs {
+  position: absolute;
+  z-index: -100;
+}
+
+.blob1,
+.blob2,
+.blob3,
+.blob4,
+.blob5 {
+  position: absolute;
+  border-radius: 100%;
+}
+
+.blob1 {
+  width: 20rem;
+  height: 20rem;
+  left: 13rem;
+  top: 10rem;
+  filter: blur(12rem);
+  background-color: #9747ff;
+}
+.blob2 {
+  width: 15rem;
+  height: 15rem;
+  right: 13rem;
+  bottom: 5rem;
+  filter: blur(10rem);
+  background-color: #9747ff;
+}
+
+.blob3 {
+  width: 10rem;
+  height: 10rem;
+  left: 35rem;
+  bottom: 20rem;
+  filter: blur(7rem);
+  background-color: #ac8508;
+}
+
+.blob4 {
+  width: 16rem;
+  height: 16rem;
+  right: -8rem;
+  bottom: 40rem;
+  filter: blur(12rem);
+  background-color: #ac8508;
+}
+
+.blob5 {
+  width: 10rem;
+  height: 10rem;
+  left: -8rem;
+  bottom: 5rem;
+  filter: blur(10rem);
+  background-color: #9747ff;
+}
+
+#header {
+  color: white;
+  padding-bottom: 2rem;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
 .container2 {
   height: 40rem;
   width: 37rem;
   padding: 3rem;
-  margin: 2rem;
   border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #39393945;
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border: 1px solid #454545;
 }
 
-ul > li {
+#item {
+  font-size: 16px;
+  height: fit-content;
+  width: 100px;
   list-style: none;
+  color: white;
+  flex: 1;
+  padding-left: 2rem;
+}
+
+#todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.25rem;
-  width: 100%;
-  height: 15vh;
+  height: fit-content;
   min-height: 12vh;
-  background-color: #ace6f6;
+  background-color: #353535;
+  padding: 1rem;
   border-radius: 0.75rem;
 }
 
@@ -71,16 +141,20 @@ button {
   border: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.715);
-  transition: 200ms ease-in-out;
+  background-color: #45454560;
+  color: #9747ff;
+  transition: all 400ms ease-in-out;
 }
+
 button:hover {
-  background-color: white;
+  background-color: #9747ff;
+  color: #393939;
 }
 
 input {
   font-size: 20px;
   width: 18rem;
-  height: 3rem;
+  height: 2.5rem;
   border: none;
   border-radius: 0.5rem;
 }

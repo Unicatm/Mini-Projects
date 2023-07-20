@@ -2,6 +2,11 @@ const addButton = document.getElementById("addItem");
 const removeButton = document.getElementById("removeItem");
 const undo = document.getElementById("undo");
 const list = document.getElementById("list");
+
+const bgMove = document.querySelector(".container");
+const frontBlobs = document.querySelector(".front-blobs");
+const backBlobs = document.querySelector(".back-blobs");
+
 const count = list.children;
 console.log(count);
 let removedItems = [];
