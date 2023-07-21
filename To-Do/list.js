@@ -10,6 +10,12 @@ let items = [];
 let removedItems = [];
 
 document.addEventListener("mousemove", parallax);
+addButton.addEventListener("click", addToDo);
+list.addEventListener("click", deleteItem);
+undoBtn.addEventListener("click", undoAction);
+deleteAllBtn.addEventListener("click", deleteAll);
+
+//Animated background
 function parallax(event) {
   this.querySelectorAll(".blob").forEach((shift) => {
     const position = shift.getAttribute("value");
@@ -20,11 +26,7 @@ function parallax(event) {
   });
 }
 
-addButton.addEventListener("click", addToDo);
-list.addEventListener("click", deleteItem);
-undoBtn.addEventListener("click", undoAction);
-deleteAllBtn.addEventListener("click", deleteAll);
-
+//Buttons
 function addToDo(e) {
   //Prevent the form from subbmiting
   e.preventDefault();
