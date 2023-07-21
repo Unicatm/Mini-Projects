@@ -18,6 +18,13 @@ body {
   font-family: Poppins;
 }
 
+.footer {
+  color: rgba(255, 255, 255, 0.659);
+  font-size: 0.75rem;
+  font-weight: 300;
+  padding-top: 16px;
+}
+
 .container2::-webkit-scrollbar {
   width: 0.5rem;
   border-radius: 50px;
@@ -33,7 +40,7 @@ body {
 
 /* Background */
 
-.wrapper {
+#wrapper {
   position: relative;
   display: flex;
   width: 100vw;
@@ -48,16 +55,12 @@ body {
   z-index: -100;
 }
 
-.blob1,
-.blob2,
-.blob3,
-.blob4,
-.blob5 {
+.blobs div {
   position: absolute;
   border-radius: 100%;
 }
 
-.blob1 {
+.blobs div:nth-child(1) {
   width: 20rem;
   height: 20rem;
   left: 13rem;
@@ -65,7 +68,7 @@ body {
   filter: blur(12rem);
   background-color: #9747ff;
 }
-.blob2 {
+.blobs div:nth-child(2) {
   width: 15rem;
   height: 15rem;
   right: 13rem;
@@ -74,7 +77,7 @@ body {
   background-color: #9747ff;
 }
 
-.blob3 {
+.blobs div:nth-child(3) {
   width: 10rem;
   height: 10rem;
   left: 35rem;
@@ -83,7 +86,7 @@ body {
   background-color: #ac8508;
 }
 
-.blob4 {
+.blobs div:nth-child(4) {
   width: 16rem;
   height: 16rem;
   right: -8rem;
@@ -92,7 +95,7 @@ body {
   background-color: #ac8508;
 }
 
-.blob5 {
+.blobs div:nth-child(5) {
   width: 10rem;
   height: 10rem;
   left: -8rem;

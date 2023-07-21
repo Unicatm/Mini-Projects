@@ -9,6 +9,17 @@ const count = list.children;
 let items = [];
 let removedItems = [];
 
+document.addEventListener("mousemove", parallax);
+function parallax(event) {
+  this.querySelectorAll(".blob").forEach((shift) => {
+    const position = shift.getAttribute("value");
+    const x = (window.innerWidth - event.pageX * position) / 150;
+    const y = (window.innerHeight - event.pageY * position) / 150;
+
+    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+  });
+}
+
 addButton.addEventListener("click", addToDo);
 list.addEventListener("click", deleteItem);
 undoBtn.addEventListener("click", undoAction);
