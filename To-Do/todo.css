@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #17161a;
+  --todoList: #39393945;
+  --todoItem: #353535;
+  --buttonBg: #45454560;
+  --purple: #9747ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +14,21 @@
 
 body {
   overflow: hidden;
-  background: #17161a;
+  background: var(--bg-color);
   font-family: Poppins;
+}
+
+.container2::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 50px;
+  height: 20%;
+}
+
+.container2::-webkit-scrollbar-thumb {
+  width: 0.5rem;
+  height: 1rem;
+  background-color: #393939;
+  border-radius: 10px;
 }
 
 .container {
@@ -91,7 +112,7 @@ body {
   width: 37rem;
   padding: 3rem;
   border-radius: 2rem;
-  background: #39393945;
+  background: var(--todoList);
   backdrop-filter: blur(9.5px);
   -webkit-backdrop-filter: blur(9.5px);
   border: 1px solid #454545;
@@ -109,7 +130,7 @@ body {
   padding-left: 2rem;
 }
 
-.todo-item {
+#task {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -117,7 +138,7 @@ body {
   font-size: 1.25rem;
   height: fit-content;
   min-height: 12vh;
-  background-color: #353535;
+  background-color: var(--todoItem);
   padding: 1rem;
   border-radius: 0.75rem;
 }
@@ -145,14 +166,13 @@ button {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.715);
-  background-color: #45454560;
-  color: #9747ff;
+  background-color: var(--buttonBg);
+  color: var(--purple);
   transition: all 400ms ease-in-out;
 }
 
 button:hover {
-  background-color: #9747ff;
+  background-color: var(--purple);
   color: #393939;
 }
 
@@ -162,4 +182,9 @@ input {
   height: 2.5rem;
   border: none;
   border-radius: 0.5rem;
+}
+
+.fa-check,
+.fa-trash-can {
+  pointer-events: none;
 }
