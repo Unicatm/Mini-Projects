@@ -31,7 +31,9 @@ body {
   border-radius: 10px;
 }
 
-.container {
+/* Background */
+
+.wrapper {
   position: relative;
   display: flex;
   width: 100vw;
@@ -106,6 +108,8 @@ body {
   font-weight: 900;
 }
 
+/* To-Do */
+
 .container2 {
   position: relative;
   height: 40rem;
@@ -141,6 +145,16 @@ body {
   background-color: var(--todoItem);
   padding: 1rem;
   border-radius: 0.75rem;
+}
+
+.completed {
+  background-color: var(--purple);
+  text-decoration: line-through;
+}
+
+.checked {
+  background-color: var(--purple);
+  color: #393939;
 }
 
 ul {

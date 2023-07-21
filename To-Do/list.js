@@ -1,7 +1,6 @@
 const addButton = document.querySelector("#addItem");
 const undo = document.getElementById("undo");
 
-const task = document.querySelector("#task");
 const list = document.querySelector("#list");
 const inputBar = document.querySelector("#input-bar");
 
@@ -19,6 +18,7 @@ function addToDo(e) {
   newTodoItem.setAttribute("id", "task");
 
   const checkBtn = document.createElement("button");
+  checkBtn.classList.add("check");
   checkBtn.innerHTML = `<i class="fa-solid fa-check fa-lg"></i>`;
   newTodoItem.appendChild(checkBtn);
 
@@ -46,6 +46,13 @@ function deleteItem(e) {
   if (item.classList[0] === "trash") {
     const task = item.parentElement;
     task.remove();
+  }
+
+  if (item.classList[0] === "check") {
+    const task = item.parentElement;
+    task.classList.toggle("completed");
+    item.classList.toggle("checked");
+    //console.log(task);
   }
 }
 
