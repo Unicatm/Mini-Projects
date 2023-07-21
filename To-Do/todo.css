@@ -145,7 +145,7 @@ body {
   background-color: var(--todoItem);
   padding: 1rem;
   border-radius: 0.75rem;
-  transition: all 200ms ease;
+  transition: all 400ms ease;
 }
 
 .completed {
@@ -203,7 +203,8 @@ button {
 
 .trash:hover,
 #undo:hover,
-#addItem:hover #deleteAll:hover {
+#addItem:hover,
+#deleteAll:hover {
   color: #393939;
   background-color: var(--purple);
 }
