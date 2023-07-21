@@ -145,6 +145,7 @@ body {
   background-color: var(--todoItem);
   padding: 1rem;
   border-radius: 0.75rem;
+  transition: all 200ms ease;
 }
 
 .completed {
@@ -152,6 +153,7 @@ body {
   text-decoration: line-through;
   text-decoration-color: var(--purple);
   text-decoration-thickness: 2px;
+  opacity: 0.5;
 }
 
 .checked {
@@ -176,6 +178,12 @@ ul {
   padding-bottom: 32px;
 }
 
+.menu2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 button {
   width: 3rem;
   height: 3rem;
@@ -184,7 +192,20 @@ button {
   cursor: pointer;
   background-color: var(--buttonBg);
   color: var(--purple);
-  transition: all 200ms ease-in-out;
+}
+
+.trash,
+#undo,
+#addItem,
+#deleteAll {
+  transition: all 300ms ease-in-out;
+}
+
+.trash:hover,
+#undo:hover,
+#addItem:hover #deleteAll:hover {
+  color: #393939;
+  background-color: var(--purple);
 }
 
 input {

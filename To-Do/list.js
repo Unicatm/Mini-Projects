@@ -1,4 +1,5 @@
 const addButton = document.querySelector("#addItem");
+const deleteAllBtn = document.querySelector("#deleteAll");
 const undoBtn = document.getElementById("undo");
 
 const list = document.querySelector("#list");
@@ -11,6 +12,7 @@ let removedItems = [];
 addButton.addEventListener("click", addToDo);
 list.addEventListener("click", deleteItem);
 undoBtn.addEventListener("click", undoAction);
+deleteAllBtn.addEventListener("click", deleteAll);
 
 function addToDo(e) {
   //Prevent the form from subbmiting
@@ -59,6 +61,14 @@ function deleteItem(e) {
     task.classList.toggle("completed");
     item.classList.toggle("checked");
   }
+}
+
+function deleteAll() {
+  allItems = document.querySelectorAll("#task");
+  for (const item of allItems) {
+    item.remove();
+  }
+  console.log(allItems);
 }
 
 function undoAction() {
