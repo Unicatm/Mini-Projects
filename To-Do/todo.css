@@ -150,6 +150,8 @@ body {
 .completed {
   background-color: var(--purple);
   text-decoration: line-through;
+  text-decoration-color: var(--purple);
+  text-decoration-thickness: 2px;
 }
 
 .checked {
@@ -182,12 +184,7 @@ button {
   cursor: pointer;
   background-color: var(--buttonBg);
   color: var(--purple);
-  transition: all 400ms ease-in-out;
-}
-
-button:hover {
-  background-color: var(--purple);
-  color: #393939;
+  transition: all 200ms ease-in-out;
 }
 
 input {
