@@ -1,14 +1,16 @@
 const addButton = document.querySelector("#addItem");
-const undo = document.getElementById("undo");
+const undoBtn = document.getElementById("undo");
 
 const list = document.querySelector("#list");
 const inputBar = document.querySelector("#input-bar");
 
 const count = list.children;
+let items = [];
 let removedItems = [];
 
 addButton.addEventListener("click", addToDo);
 list.addEventListener("click", deleteItem);
+undoBtn.addEventListener("click", undoAction);
 
 function addToDo(e) {
   //Prevent the form from subbmiting
@@ -34,6 +36,9 @@ function addToDo(e) {
 
   //If the input is empty don't add a task
   list.appendChild(newTodoItem);
+
+  items.push(newTodoItem);
+
   if (newItem.innerText === "") {
     newTodoItem.remove();
   }
@@ -45,6 +50,7 @@ function deleteItem(e) {
   const item = e.target;
   if (item.classList[0] === "trash") {
     const task = item.parentElement;
+    removedItems.push(task);
     task.remove();
   }
 
@@ -52,11 +58,10 @@ function deleteItem(e) {
     const task = item.parentElement;
     task.classList.toggle("completed");
     item.classList.toggle("checked");
-    //console.log(task);
   }
 }
 
-// undo.addEventListener("click", function () {
-//   const undoItem = removedItems.pop();
-//   list.appendChild(undoItem);
-// });
+function undoAction() {
+  const undoItem = removedItems.pop();
+  list.appendChild(undoItem);
+}
