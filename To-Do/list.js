@@ -9,14 +9,8 @@ const count = list.children;
 let items = [];
 let removedItems = [];
 
-document.addEventListener("mousemove", parallax);
-addButton.addEventListener("click", addToDo);
-list.addEventListener("click", deleteItem);
-undoBtn.addEventListener("click", undoAction);
-deleteAllBtn.addEventListener("click", deleteAll);
-
 //Animated background
-function parallax(event) {
+document.addEventListener("mousemove", () => {
   this.querySelectorAll(".blob").forEach((shift) => {
     const position = shift.getAttribute("value");
     const x = (window.innerWidth - event.pageX * position) / 150;
@@ -24,10 +18,10 @@ function parallax(event) {
 
     shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
-}
+});
 
-//Buttons
-function addToDo(e) {
+//Adding todo
+addButton.addEventListener("click", () => {
   //Prevent the form from subbmiting
   e.preventDefault();
 
@@ -59,9 +53,10 @@ function addToDo(e) {
   }
 
   inputBar.value = "";
-}
+});
 
-function deleteItem(e) {
+//Delete & check todo
+list.addEventListener("click", () => {
   const item = e.target;
   if (item.classList[0] === "trash") {
     const task = item.parentElement;
@@ -74,17 +69,19 @@ function deleteItem(e) {
     task.classList.toggle("completed");
     item.classList.toggle("checked");
   }
-}
+});
 
-function deleteAll() {
+//Delete all todos
+deleteAllBtn.addEventListener("click", () => {
   allItems = document.querySelectorAll("#task");
   for (const item of allItems) {
     item.remove();
   }
   console.log(allItems);
-}
+});
 
-function undoAction() {
+//Undo the deleted todo
+undoBtn.addEventListener("click", () => {
   const undoItem = removedItems.pop();
   list.appendChild(undoItem);
-}
+});
