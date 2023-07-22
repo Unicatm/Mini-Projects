@@ -1,17 +1,18 @@
 const addButton = document.querySelector("#addItem");
 const deleteAllBtn = document.querySelector("#deleteAll");
 const undoBtn = document.getElementById("undo");
+const filter = document.querySelector("#filter");
 
 const list = document.querySelector("#list");
 const inputBar = document.querySelector("#input-bar");
 
-const count = list.children;
-let items = [];
-let removedItems = [];
+const items = [];
+const filterItems = [];
+const removedItems = [];
 
 //Animated background
 document.addEventListener("mousemove", () => {
-  this.querySelectorAll(".blob").forEach((shift) => {
+  document.querySelectorAll(".blob").forEach((shift) => {
     const position = shift.getAttribute("value");
     const x = (window.innerWidth - event.pageX * position) / 150;
     const y = (window.innerHeight - event.pageY * position) / 150;
@@ -21,7 +22,7 @@ document.addEventListener("mousemove", () => {
 });
 
 //Adding todo
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", (e) => {
   //Prevent the form from subbmiting
   e.preventDefault();
 
@@ -43,20 +44,25 @@ addButton.addEventListener("click", () => {
   trashBtn.innerHTML = `<i class="fa-regular fa-trash-can fa-lg"></i>`;
   newTodoItem.appendChild(trashBtn);
 
-  //If the input is empty don't add a task
   list.appendChild(newTodoItem);
 
-  items.push(newTodoItem);
+  //items.push(newTodoItem);
 
+  //If the input is empty don't add a task
   if (newItem.innerText === "") {
     newTodoItem.remove();
   }
-
   inputBar.value = "";
+
+  // -------------------------
+
+  if (list.children) {
+    items.push(list.children);
+  }
 });
 
 //Delete & check todo
-list.addEventListener("click", () => {
+list.addEventListener("click", (e) => {
   const item = e.target;
   if (item.classList[0] === "trash") {
     const task = item.parentElement;
@@ -77,7 +83,6 @@ deleteAllBtn.addEventListener("click", () => {
   for (const item of allItems) {
     item.remove();
   }
-  console.log(allItems);
 });
 
 //Undo the deleted todo
@@ -85,3 +90,6 @@ undoBtn.addEventListener("click", () => {
   const undoItem = removedItems.pop();
   list.appendChild(undoItem);
 });
+
+//Filter by completed tasks
+filter.addEventListener("click", () => {});
